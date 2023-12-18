@@ -296,3 +296,22 @@ mirrors = {
         ]
     }
 }
+
+
+# 新增源结构例如:
+# 1. 单源结构
+    # https://packages.microsoft.com/repos/edge/dists/stable
+    #                                     ^          ^
+    # 参考多源结构
+# 2. 多源合并结构
+    # https://mirrors.bfsu.edu.cn/debian/dists/buster
+    #                            ^            ^
+    # https://mirrors.bfsu.edu.cn/ubuntu/dists/jammy
+    #                            ^            ^
+# https://mirrors.bfsu.edu.cn
+    # debian
+        # bullseye
+        # buster
+    # ubuntu 
+        # bionic
+        # jammy
