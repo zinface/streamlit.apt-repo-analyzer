@@ -286,5 +286,10 @@ mirrors = {
             '8.3',
             '8.4',
         ]
+    },
+    'https://packages.microsoft.com/repos': {
+        'edge': [
+            'stable'    
+        ]
     }
 }
