@@ -290,6 +290,9 @@ mirrors = {
     'https://packages.microsoft.com/repos': {
         'edge': [
             'stable'    
+        ],
+        "vscode": [
+            'stable'
         ]
     }
 }
