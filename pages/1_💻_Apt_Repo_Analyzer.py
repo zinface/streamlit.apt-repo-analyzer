@@ -194,6 +194,7 @@ def check_url(url):
 
 # 预期优先显示的架构名称
 priority_arch = st.sidebar.text_input('填写我的架构 - 优先显示', placeholder='例如: amd64、arm64、riscv64', value='amd64').strip()
+priority_package = st.sidebar.text_input('填写我的包 - 优先显示', placeholder='例如: linux-images').strip()
 
 mirror = st.sidebar.selectbox('选择镜像源', options=mirrors.keys())
 prefix = mirror
@@ -227,7 +228,14 @@ if check_url(repo_comp_binary_url + '/'):
     with st.spinner('加载中'):
     # sinfo = SourcesGzInfo(repo_comp_source_url)
         pinfo = PackageInfo(repo_comp_binary_url)
-        package = st.selectbox('选择包', pinfo.GetPackages())
+        packages = pinfo.GetPackages()
+        packages.sort()
+        priority_package_index = 0
+        for i, pkg in enumerate(packages):
+            if priority_package in pkg:
+                priority_package_index = i
+                break
+        package = st.selectbox('选择包', packages, index = priority_package_index)
 
     with st.spinner('加载中.'):
         for pkg in pinfo.GetPackageInfos():
