@@ -238,8 +238,24 @@ if check_url(repo_comp_binary_url + '/'):
         package = st.selectbox('选择包', packages, index = priority_package_index)
 
     with st.spinner('加载中.'):
+        packageinfos = []
         for pkg in pinfo.GetPackageInfos():
             if pkg['Package'] == package and package != None:
+                packageinfos.append(pkg)
+    
+        if st.sidebar.checkbox('软件包列表显示切换'):
+            for pkg in packageinfos:
+                # name = os.path.basename(pkg['Filename'])
+                deb_url = os.path.join(prefix, release, pkg['Filename'])
+                # pkg['Filename'] = f'<a href="{deb_url}">下载软件包: {name}</a>'
+                # pkg['Download'] = deb_url
+                pkg['Filename'] = deb_url
+
+            st.dataframe(packageinfos, column_config={
+                'Filename': st.column_config.LinkColumn('Download')
+            }, height=500)
+        else:
+            for pkg in packageinfos:
                 st.table(pkg)
                 name = os.path.basename(pkg['Filename'])
                 deb_url = os.path.join(prefix, release, pkg['Filename'])
