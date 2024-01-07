@@ -253,7 +253,7 @@ if check_url(repo_comp_binary_url + '/'):
 
             st.dataframe(packageinfos, column_config={
                 'Filename': st.column_config.LinkColumn('Download')
-            }, height=500)
+            }, use_container_width=True)
         else:
             for pkg in packageinfos:
                 st.table(pkg)
