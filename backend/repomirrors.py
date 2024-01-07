@@ -294,6 +294,170 @@ mirrors = {
         "vscode": [
             'stable'
         ]
+    },
+    "https://archive2.kylinos.cn/deb/kylin/production/": {
+        "CITRIX-V10-SP1-9006C/custom/citrix/9006C-V10-SP1":[
+            "default"
+        ],
+        "CITRIX-V10-SP1-990/custom/citrix/990-V10-SP1":[
+            "default"
+        ],
+        "CITRIX-V10-SP1-D2000/custom/citrix/D2000-V10-SP1":[
+            "default"
+        ],
+
+        "KY-V10-amd64/custom/kylin-desktop/V10-amd64": [
+            "10.0",
+        ],
+        "KY-990-arm64/custom/kylin-desktop/990-arm64": [
+            "10.1-kv",
+            "default",
+        ],
+        "KY-9a0-arm64/custom/kylin-desktop/9a0-arm64": [
+            "10.1-pv",
+            "default",
+        ],
+        "KY-HNXX/custom/kylin-desktop-ALT/HNXX": [
+            "default"
+        ],
+        "KY-V10-KMRE/custom/kmre/V10-KMRE/": [
+            "default",
+            "stable"
+        ],
+        "KY-V10-SP1-Eclass-amd64/custom/kylin-desktop/V10-SP1-Eclass-amd64": [
+            "10.1",
+            "default"
+        ],
+        "KY-V10-SP1-HWE-amd64/custom/kylin-desktop/V10-SP1-HWE-amd64": [
+            "10.1-hwe",
+            "default"
+        ],
+        "KY-V10-SP1-amd64/custom/kylin-desktop/V10-SP1-amd64": [
+            "10.1",
+            "default"
+        ],
+        "KY-V10-SP1-arm64/custom/kylin-desktop/V10-SP1-arm64": [
+            "10.1",
+            "default"
+        ],
+        "KY-V10-SP1-loongarch64/custom/kylin-desktop/V10-SP1-loongarch64": [
+            "10.1",
+            "default"
+        ],
+        "KY-V10-SP1-mips64el/custom/kylin-desktop/V10-SP1-mips64el": [
+            "10.1",
+            "default"
+        ],
+        "KY-V10-SP1-sw64/custom/kylin-desktop/V10-SP1-sw64": [
+            "10.1-sw64",
+            "default"
+        ],
+        "KY-V10-amd64/custom/kylin-desktop/V10-amd64": [
+            "10.0",
+            "default"
+        ],
+        "KY-V10-arm64/custom/kylin-desktop/V10-arm64": [
+            "10.0",
+            "default"
+        ],
+        "KKY-V10-mips64el/custom/kylin-desktop/V10-mips64el": [
+            "10.0",
+            "default"
+        ],
+        "KY-V4-SP1-amd64/custom/kylin-desktop/V4-SP1-amd64": [
+            "default",
+            "stable"
+        ],
+        "KY-V4-SP1-arm64/custom/kylin-desktop/V4-SP1-arm64": [
+            "default",
+            "stable"
+        ],
+        "KY-V4-SP1-mips64el/custom/kylin-desktop/V4-SP1-mips64el": [
+            "default",
+            "stable"
+        ],
+        "KY-V4-SP2-amd64/custom/kylin-desktop/V4-SP2-amd64": [
+            "default",
+            "stable"
+        ],
+        "KY-V4-SP2-arm64/custom/kylin-desktop/V4-SP2-arm64": [
+            "default",
+            "stable"
+        ],
+        "KY-V4-SP2-mips64el/custom/kylin-desktop/V4-SP2-mips64el": [
+            "default",
+            "stable"
+        ],
+        "KY-V4-SP3-amd64/custom/kylin-desktop/V4-SP3-amd64": [
+            "default",
+            "stable"
+        ],
+        "KY-V4-SP3-arm64/custom/kylin-desktop/V4-SP3-arm64": [
+            "default",
+            "stable"
+        ],
+        "KY-V4-SP3-mips64el/custom/kylin-desktop/V4-SP3-mips64el": [
+            "default",
+            "stable"
+        ],
+        "KY-V4-SP4-amd64/custom/kylin-desktop/V4-SP4-amd64": [
+            "default",
+            "stable"
+        ],
+        "KY-V4-SP4-arm64/custom/kylin-desktop/V4-SP4-arm64": [
+            "default",
+            "stable"
+        ],
+        "KY-V4-SP4-mips64el/custom/kylin-desktop/V4-SP4-mips64el": [
+            "default",
+            "stable"
+        ],
+        "KY-V4-amd64/custom/kylin-desktop/V4-amd64": [
+            "default",
+            "stable"
+        ],
+        "KY-V4-arm64/custom/kylin-desktop/V4-arm64": [
+            "default",
+            "stable"
+        ],
+        "KY-V4-mips64el/custom/kylin-desktop/V4-mips64el": [
+            "default",
+            "stable"
+        ],
+        "PART-10_1-edu/custom/partner/edu": [
+            "default",
+            "stable"
+        ],
+        "PART-10_1-edu-wayland/custom/partner/edu-wayland": [
+            "default",
+            "stable"
+        ],
+        "PART-10_1-ilscreen/custom/partner/ilscreen": [
+            "default",
+            "stable"
+        ],
+        "PART-10_1-kirin990/custom/partner/kirin990": [
+            "default",
+            "stable"
+        ],
+        "PART-10_1-kirin9a0/custom/partner/kirin9a0": [
+            "default",
+            "stable"
+        ],
+        "PART-10_1-mavis/custom/partner/mavis": [
+            "default",
+            "stable"
+        ],
+        "PART-V10/custom/partner/V10": [
+            "default"
+        ],
+        "PART-V10-SP1/custom/partner/V10-SP1": [
+            "default"
+        ],
+        "PART-openKylin/custom/partner/openKylin": [
+            "default"
+        ],
+        "TEST/": [],
     }
 }
 
