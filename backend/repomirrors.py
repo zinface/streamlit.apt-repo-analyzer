@@ -458,6 +458,11 @@ mirrors = {
             "default"
         ],
         "TEST/": [],
+    },
+    "https://packages.mozilla.org/": {
+        "apt": [
+            "mozilla"
+        ]
     }
 }
 
@@ -479,3 +484,7 @@ mirrors = {
     # ubuntu 
         # bionic
         # jammy
+        
+# 一些特殊的源分析
+    # deb https://packages.mozilla.org/apt mozilla/main
+    # firefox 源无法直接读取 url 目录

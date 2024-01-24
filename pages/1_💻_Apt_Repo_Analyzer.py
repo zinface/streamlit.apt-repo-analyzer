@@ -18,6 +18,10 @@ def cache_get(url, spinner = True):
     else:
         return requests.get(url).content
 
+@st.cache_data
+def check_url(url):
+    return requests.head(url).status_code == 200
+
 class ReleaseInfo:
     
     def __init__(self, url) -> None:
@@ -130,15 +134,22 @@ class PackageInfo:
         if type(url) == str:
             if url.startswith('http'):
                 if not url.endswith('Packages.gz'):
-                    url = os.path.join(url, 'Packages.gz')
+                    if check_url(os.path.join(url, 'Packages.gz')):
+                        url = os.path.join(url, 'Packages.gz')
+                        
+                    else:
+                        url = os.path.join(url, 'Packages')
                 # self.data = requests.get(url).content.decode(errors='ignore')
                 # self.data = requests.get(url).content
                 self.data = cache_get(url)
+                self.url = url
                 # print('requested:', len(self.data),'size,', '[', self.data[:20], ']')
     
     def GetUnGzip(self):
         # buffer = io.BytesIO(self.data)
-        return gzip.decompress(self.data).decode(errors='ignore')
+        if self.url.endswith('gz'):
+            return gzip.decompress(self.data).decode(errors='ignore')
+        return self.data.decode(errors='ignore')
     
     def GetPackages(self):
         pkgs = []
@@ -189,8 +200,6 @@ class PackageInfo:
 
 from backend.repomirrors import mirrors
 
-def check_url(url):
-    return requests.head(url).status_code == 200
 
 # 预期优先显示的架构名称
 priority_arch = st.sidebar.text_input('填写我的架构 - 优先显示', placeholder='例如: amd64、arm64、riscv64', value='amd64').strip()
@@ -224,7 +233,8 @@ repo_comp_binary_url = os.path.join(repo_prefix_url, comp, f'binary-{arch}')
 st.text(repo_comp_source_url)
 st.text(repo_comp_binary_url)
 
-if check_url(repo_comp_binary_url + '/'):
+# firefox: 目录可能无法访问所以直接指定 Packages 文件
+if check_url(repo_comp_binary_url + '/') or check_url(os.path.join(repo_comp_binary_url, "Packages")):
     with st.spinner('加载中'):
     # sinfo = SourcesGzInfo(repo_comp_source_url)
         pinfo = PackageInfo(repo_comp_binary_url)
