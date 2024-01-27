@@ -10,6 +10,23 @@
 #   http://pkg.loongnix.cn
 
 mirrors = {
+    'https://ci.deepin.com/repo/deepin/deepin-community/': {
+        "stable": [
+            "beige"
+        ],
+        "beta3-dde": [
+            "beige"
+        ],
+        "commercial": [
+            "unstable"
+        ],
+        "driver": [
+            "driver"
+        ],
+        "linux-libc-dev-loong64": [
+            "stable"
+        ]
+    },
     'https://proposed-packages.deepin.com/': {
         'beige-testing': [
             'unstable'
