@@ -11,6 +11,9 @@
 
 mirrors = {
     'https://ci.deepin.com/repo/deepin/deepin-community/': {
+        "beta3": [
+            "beige"
+        ],
         "stable": [
             "beige"
         ],
