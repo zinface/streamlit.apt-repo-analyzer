@@ -198,14 +198,34 @@ class PackageInfo:
     # .... 待补充
 
 
-from backend.repomirrors import mirrors
+from backend.repomirrors import mirrors, mirrors_translates
 
 
 # 预期优先显示的架构名称
 priority_arch = st.sidebar.text_input('填写我的架构 - 优先显示', placeholder='例如: amd64、arm64、riscv64', value='amd64').strip()
 priority_package = st.sidebar.text_input('填写我的包 - 优先显示', placeholder='例如: linux-images').strip()
 
-mirror = st.sidebar.selectbox('选择镜像源', options=mirrors.keys())
+# 软件源的翻译
+# 1. 创建字典，显示:值
+mirror_options = {
+    # 显示: 值
+}
+# 2. 翻译与值的映射
+for tkey in mirrors_translates.keys():
+    mirror_options[tkey] = mirrors_translates[tkey]
+# 3. 过滤已被翻译的值，保留未翻译的值
+for mkey in mirrors.keys():
+    skip = False
+    for tkey in mirror_options.keys():
+        if mirror_options[tkey] == mkey:
+            skip = True
+    if not skip:
+        mirror_options[mkey] = mkey
+
+
+mirror_option = st.sidebar.selectbox('选择镜像源', options=mirror_options.keys())
+mirror = mirror_options[mirror_option]
+st.sidebar.text(mirror)
 prefix = mirror
 dists = mirrors[mirror]
 

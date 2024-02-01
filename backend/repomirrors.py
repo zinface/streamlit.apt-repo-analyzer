@@ -28,6 +28,9 @@ mirrors = {
         ],
         "linux-libc-dev-loong64": [
             "stable"
+        ],
+        'moore-driver': [
+            'beige'
         ]
     },
     'https://proposed-packages.deepin.com/': {
@@ -486,6 +489,39 @@ mirrors = {
     }
 }
 
+
+# https://ci.deepin.com/repo/deepin/deepin-community/
+# https://proposed-packages.deepin.com/
+# https://mirrors.bfsu.edu.cn/deepin
+# https://mirrors.bfsu.edu.cn/
+# https://archive.kylinos.cn/kylin/
+# http://pkg.loongnix.cn/
+# https://packages.microsoft.com/repos
+# https://archive2.kylinos.cn/deb/kylin/production/
+# https://packages.mozilla.org/
+
+mirrors_translates = {
+    # '深度内部计划源: v23 计划':
+        # 'https://ci.deepin.com/repo/subprojects/beige',
+    '深度社区自动化: v23 beta3、驱动源 (等7个子类)':
+        'https://ci.deepin.com/repo/deepin/deepin-community/',
+    '深度一揽子计划源: v23 测试、v20、每晚构建源':
+        'https://proposed-packages.deepin.com/',
+    '北外镜像: deepin V20.9、V23 beta2':
+        'https://mirrors.bfsu.edu.cn/deepin',
+    '北外镜像: debain/ubuntu/ubuntu-ports':
+        'https://mirrors.bfsu.edu.cn/',
+    '麒麟归档镜像 - (91个子类)':
+        'https://archive.kylinos.cn/kylin/',
+    '麒麟归档镜像 - 生产环境软件源(42个子类)':
+        'https://archive2.kylinos.cn/deb/kylin/production/',
+    '龙芯 loongnix 镜像源':
+        'http://pkg.loongnix.cn/',
+    '微软开源镜像站 - Edge、vscode':
+        'https://packages.microsoft.com/repos',
+    'Mozilla 镜像站 - 火狐浏览器':
+        'https://packages.mozilla.org/',
+}
 
 # 新增源结构例如:
 # 1. 单源结构
