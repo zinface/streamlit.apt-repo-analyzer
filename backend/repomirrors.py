@@ -9,9 +9,21 @@
 # 龙芯源
 #   http://pkg.loongnix.cn
 
+# 建议使用 . 来处理根 dists 路径
+
 mirrors = {
+    'https://archive.deb-multimedia.org': {
+        '.': [
+            'jessie-backports',
+            'jessie',
+            'stretch-backports',
+            'stretch',
+            'wheezy-backports',
+            'wheezy',
+        ]
+    },
     'https://pkg.hamonikr.org': {
-        '/': [
+        '.': [
             'bionic',
             'bookworm',
             'bullseye',
@@ -538,6 +550,17 @@ mirrors_translates = {
         'https://packages.mozilla.org/',
     '棒子社区软件源 - pkg.hamonikr.org':
         'https://pkg.hamonikr.org',
+}
+
+# 代号
+debian_version = {
+    'debian7': 'wheezy',
+    'debian8': 'jessie',
+    'debian9': 'stretch',
+    'debian10': 'buster',
+    'debian11': 'bullseye',
+    'debian12': 'bookworm',
+    'debian13': 'trixie',
 }
 
 # 新增源结构例如:
