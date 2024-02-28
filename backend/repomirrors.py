@@ -10,6 +10,21 @@
 #   http://pkg.loongnix.cn
 
 mirrors = {
+    'https://pkg.hamonikr.org': {
+        '/': [
+            'bionic',
+            'bookworm',
+            'bullseye',
+            'entjin',
+            'entsun',
+            'focal',
+            'groovy',
+            'hanla',
+            'hirsute',
+            'jin',
+            'public',
+        ]
+    },
     'https://ci.deepin.com/repo/deepin/deepin-community/': {
         "beta3": [
             "beige"
@@ -521,6 +536,8 @@ mirrors_translates = {
         'https://packages.microsoft.com/repos',
     'Mozilla 镜像站 - 火狐浏览器':
         'https://packages.mozilla.org/',
+    '棒子社区软件源 - pkg.hamonikr.org':
+        'https://pkg.hamonikr.org',
 }
 
 # 新增源结构例如:

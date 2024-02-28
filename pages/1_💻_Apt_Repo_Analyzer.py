@@ -232,7 +232,11 @@ dists = mirrors[mirror]
 release = st.sidebar.selectbox('选择发行版', options=dists.keys())
 dist = st.sidebar.selectbox('选择发行源', options=dists[release])
 
-repo_prefix_url = os.path.join(prefix, release, 'dists', dist)
+if release == "/":
+    repo_prefix_url = os.path.join(prefix, 'dists', dist)
+else:
+    repo_prefix_url = os.path.join(prefix, release, 'dists', dist)
+
 st.text(repo_prefix_url)
 rinfo = ReleaseInfo(repo_prefix_url)
 
