@@ -73,8 +73,8 @@ mirrors = {
     },
     'https://mirrors.bfsu.edu.cn/': {
         'debian': [
-            'Debian12.4',
-            'Debian11.8',
+            'Debian12.5',
+            'Debian11.9',
             'Debian10.13',
             'bookworm',
             'bookworm-backports',
