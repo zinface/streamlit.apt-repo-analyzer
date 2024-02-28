@@ -12,6 +12,13 @@
 # 建议使用 . 来处理根 dists 路径
 
 mirrors = {
+    'https://cdn-professional-security.chinauos.com':{
+        '.': [
+            'eagle/1050',
+            'eagle/1060',
+            'eagle/1070'
+        ]
+    },
     'https://archive.deb-multimedia.org': {
         '.': [
             'jessie-backports',
@@ -550,6 +557,8 @@ mirrors_translates = {
         'https://packages.mozilla.org/',
     '棒子社区软件源 - pkg.hamonikr.org':
         'https://pkg.hamonikr.org',
+    '统信专业版源 professional-security':
+        'https://cdn-professional-security.chinauos.com',
 }
 
 # 代号
