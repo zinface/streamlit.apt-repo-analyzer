@@ -48,6 +48,18 @@ mirrors = {
         "beta3": [
             "beige"
         ],
+        "beta3-dde": [
+            "beige"
+        ],
+        "commercial": [
+            "unstable"
+        ],
+        "deepin-keyring": [
+            "deepin_develop"
+        ],
+        "driver": [
+            "driver"
+        ],
         "stable": [
             "beige"
         ],
@@ -65,6 +77,23 @@ mirrors = {
         ],
         'moore-driver': [
             'beige'
+        ],
+        "qt-6.6": [
+            ""
+        ],
+        "qt-6.6.1": [
+            "develop"
+        ],
+        "qtwebengine-opensource-src": [
+            "stable"
+        ],
+        "obs-repos": [
+            "beige",
+            "kernel",
+            "unstable"
+        ],
+        "nvidia-graphics-drivers-530.41.03-3deepin1": [
+            "testing"
         ]
     },
     'https://proposed-packages.deepin.com/': {
