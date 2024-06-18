@@ -520,6 +520,47 @@ mirrors = {
         "apt": [
             "mozilla"
         ]
+    },
+    "https://repo.radeon.com/rocm/apt": {
+        "latest": [
+            "focal", "jammy", "ubuntu"
+        ],
+        "debian": [ 
+            "focal", "jammy", "ubuntu"
+        ],
+        "6.1": [
+            "focal", "jammy", "ubuntu"
+        ],
+        "6.1.1": [
+            "focal", "jammy", "ubuntu"
+        ],
+        "6.0": [
+            "focal", "jammy", "ubuntu"
+        ],
+        "6.0.1": [
+            "focal", "jammy", "ubuntu"
+        ],
+        "6.0.2": [
+            "focal", "jammy", "ubuntu"
+        ],
+        "6.0.3": [
+            "focal", "jammy", "ubuntu"
+        ],
+        "6.1": [
+            "focal", "jammy", "ubuntu"
+        ],
+        "5.7": [
+            "focal", "jammy", "ubuntu"
+        ],
+        "5.7.1": [
+            "focal", "jammy", "ubuntu"
+        ],
+        "5.7.2": [
+            "focal", "jammy", "ubuntu"
+        ],
+        "5.7.3": [
+            "focal", "jammy", "ubuntu"
+        ]
     }
 }
 
@@ -559,6 +600,8 @@ mirrors_translates = {
         'https://pkg.hamonikr.org',
     '统信专业版源 professional-security':
         'https://cdn-professional-security.chinauos.com',
+    'AMD - ROCm 软件仓库': 
+        'https://repo.radeon.com/rocm/apt',
 }
 
 # 代号
