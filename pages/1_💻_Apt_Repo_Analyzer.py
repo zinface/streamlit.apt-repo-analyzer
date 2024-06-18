@@ -292,6 +292,9 @@ if check_url(repo_comp_binary_url + '/') or check_url(os.path.join(repo_comp_bin
         if st.sidebar.checkbox('软件包列表显示切换'):
             if st.sidebar.checkbox('显示所有而非选中', key='viewall'):
                 packageinfos = pinfo.GetPackageInfos()
+                if len(packageinfos) == 1 and packageinfos[0]['Package'] == None:
+                    st.error('没有任何软件包')
+                    st.stop()
             for pkg in packageinfos:
                 # name = os.path.basename(pkg['Filename'])
                 deb_url = os.path.join(prefix, release, pkg['Filename'])
