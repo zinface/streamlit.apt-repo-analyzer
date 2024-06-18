@@ -12,6 +12,11 @@
 # 建议使用 . 来处理根 dists 路径
 
 mirrors = {
+    "https://packages-lingmo.simplelinux.cn.eu.org/polaris": {
+        '.': [
+            "polaris"
+        ]
+    },
     'https://cdn-professional-security.chinauos.com':{
         '.': [
             'eagle/1050',
@@ -641,6 +646,8 @@ mirrors_translates = {
         'https://cdn-professional-security.chinauos.com',
     'AMD - ROCm 软件仓库': 
         'https://repo.radeon.com/rocm/apt',
+    '灵墨(LingmoOS)软件仓库 - 由 Source forge 托管的源':
+        'https://packages-lingmo.simplelinux.cn.eu.org/polaris'
 }
 
 # 代号
