@@ -27,15 +27,21 @@ def check_url(url):
 class ReleaseInfo:
     
     def __init__(self, url) -> None:
+        self.url = url
         if type(url) == str:
             if url.startswith('http'):
                 if not url.endswith('Release'):
                     url = os.path.join(url, 'Release')
                 # self.data = requests.get(url).content.decode()
                 # print('request:', url)
+                self.url = url
                 self.data = cache_get(url).decode(errors='ignore')
                 # print('requested:', len(self.data),'size,', '[', self.data[:20], ']')
-                
+
+    def Ok(self):
+        if self.url == '':
+            return False
+        return check_url(self.url)
 
     def getV(self, k):
         for line in self.data.split('\n'):
@@ -235,8 +241,12 @@ release = st.sidebar.selectbox('选择发行版', options=dists.keys())
 dist = st.sidebar.selectbox('选择发行源', options=dists[release])
 
 repo_prefix_url = os.path.join(prefix, release, 'dists', dist)
-st.text(repo_prefix_url)
 rinfo = ReleaseInfo(repo_prefix_url)
+if not rinfo.Ok():
+    repo_prefix_url = os.path.join(prefix, release, dist)
+    rinfo = ReleaseInfo(repo_prefix_url)
+st.text(repo_prefix_url)
+st.text(rinfo.url)
 
 st.info('架构成分: ' + rinfo.Architectures() +', 组件成分: ' + rinfo.Components())
 
@@ -250,8 +260,12 @@ except ValueError:
 arch = st.selectbox('选择架构', options=rinfo.Architectures().split(' '), index=priority_arch_index)
 comp = st.selectbox('选择组件', options=rinfo.Components().split(' '))
 
-repo_comp_source_url = os.path.join(repo_prefix_url, comp, 'source')
-repo_comp_binary_url = os.path.join(repo_prefix_url, comp, f'binary-{arch}')
+if comp != 'None':
+    repo_comp_source_url = os.path.join(repo_prefix_url, comp, 'source')
+    repo_comp_binary_url = os.path.join(repo_prefix_url, comp, f'binary-{arch}')
+else:
+    repo_comp_source_url = os.path.join(repo_prefix_url)
+    repo_comp_binary_url = os.path.join(repo_prefix_url)
 st.text(repo_comp_source_url)
 st.text(repo_comp_binary_url)
 
