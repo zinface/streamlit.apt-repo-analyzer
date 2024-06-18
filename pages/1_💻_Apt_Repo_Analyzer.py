@@ -4,6 +4,8 @@ import requests
 import gzip
 import io
 
+st.set_page_config("软件源分析器", 'assets/debian.png', layout='centered')
+
 from backend.streamlitsettings  import _max_width_
 _max_width_()
 
@@ -232,11 +234,7 @@ dists = mirrors[mirror]
 release = st.sidebar.selectbox('选择发行版', options=dists.keys())
 dist = st.sidebar.selectbox('选择发行源', options=dists[release])
 
-if release == "/":
-    repo_prefix_url = os.path.join(prefix, 'dists', dist)
-else:
-    repo_prefix_url = os.path.join(prefix, release, 'dists', dist)
-
+repo_prefix_url = os.path.join(prefix, release, 'dists', dist)
 st.text(repo_prefix_url)
 rinfo = ReleaseInfo(repo_prefix_url)
 
@@ -278,6 +276,8 @@ if check_url(repo_comp_binary_url + '/') or check_url(os.path.join(repo_comp_bin
                 packageinfos.append(pkg)
     
         if st.sidebar.checkbox('软件包列表显示切换'):
+            if st.sidebar.checkbox('显示所有而非选中', key='viewall'):
+                packageinfos = pinfo.GetPackageInfos()
             for pkg in packageinfos:
                 # name = os.path.basename(pkg['Filename'])
                 deb_url = os.path.join(prefix, release, pkg['Filename'])
@@ -288,6 +288,9 @@ if check_url(repo_comp_binary_url + '/') or check_url(os.path.join(repo_comp_bin
             st.dataframe(packageinfos, column_config={
                 'Filename': st.column_config.LinkColumn('Download')
             }, use_container_width=True)
+
+            if st.session_state.viewall:
+                st.text(f'已加载 {len(packageinfos)} 项数据')
         else:
             for pkg in packageinfos:
                 st.table(pkg)
