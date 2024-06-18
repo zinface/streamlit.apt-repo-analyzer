@@ -119,6 +119,14 @@ mirrors = {
             'beige'
         ],
     },
+    'https://mirrors.tuna.tsinghua.edu.cn/deepin': {
+        'apricot': [
+            'apricot'
+        ],
+        'beige': [
+            'beige'
+        ],
+    },
     'https://mirrors.bfsu.edu.cn/': {
         'debian': [
             'Debian12.5',
@@ -615,6 +623,8 @@ mirrors_translates = {
         'https://mirrors.bfsu.edu.cn/deepin',
     '北外镜像: debain/ubuntu/ubuntu-ports':
         'https://mirrors.bfsu.edu.cn/',
+    '清华镜像: deepin V20.9、V23 beta2':
+        'https://mirrors.tuna.tsinghua.edu.cn/deepin',
     '麒麟归档镜像 - (91个子类)':
         'https://archive.kylinos.cn/kylin/',
     '麒麟归档镜像 - 生产环境软件源(42个子类)':
